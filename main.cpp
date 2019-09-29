@@ -7,7 +7,7 @@ public:
 	virtual int eval() const = 0;
 };
 
-class Literal: public Exp {
+class Literal : public Exp {
 public:
 	int value;
 
@@ -40,6 +40,23 @@ public:
 
 };
 
+class Neg : public Exp {
+public:	
+	Exp *expr;
+	
+	Neg(Exp &e) : expr {&e} {}
+
+	virtual void print() const override {
+		std::cout << "-(";
+		expr->print();
+		std::cout << ")";
+	}
+
+	virtual int eval() const override {
+		return expr->eval() * -1;
+	}
+};
+
 int main()
 {
 	Literal x {11};
@@ -52,6 +69,10 @@ int main()
 	Add soma {x,y};
 	soma.print();
 	std::cout << " = " << soma.eval() << std::endl;
+
+	Neg menosx {x};
+	menosx.print();
+	std::cout << '\n' << menosx.eval() << std::endl;
 
 	return 0;
 }
