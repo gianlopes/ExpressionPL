@@ -14,7 +14,7 @@ public:
 	Literal(int v) : value{v} {};
 	
 	virtual void print() const override {
-		std::cout << value << std::endl;
+		std::cout << value;
 	}
 
 	virtual int eval() const override {
@@ -22,10 +22,36 @@ public:
 	}
 };
 
+class Add : public Exp {
+public:
+	const Exp *left;
+	const Exp *right;
+	Add(Exp &l, Exp &r) : left{&l}, right{&r} {}
+
+	virtual void print() const override {
+		left->print();
+		std::cout << '+';
+		right->print();
+	}
+
+	virtual int eval() const override {
+		return left->eval() + right->eval();
+	}
+
+};
+
 int main()
 {
-	Literal x {10};
+	Literal x {11};
 	x.print();
-	std::cout << "Valor de x = " << x.eval();
+	std::cout << '\n'<< "Valor de x = " << x.eval() << std::endl;
+	Literal y {5};
+	y.print();
+	std::cout << '\n' << "Valor de y = " << y.eval() << std::endl;
+	
+	Add soma {x,y};
+	soma.print();
+	std::cout << " = " << soma.eval() << std::endl;
+
 	return 0;
 }
