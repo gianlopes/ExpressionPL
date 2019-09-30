@@ -19,8 +19,6 @@ int main()
 
 
     std::cout << std::endl << "Lit + Print + Eval:" << std::endl;
-
-
     //LitE é um Lit com a funcionalidade eval()
     LitE t2 {5};
     std::cout << "t2 = " << t2.eval() << std::endl;
@@ -40,6 +38,7 @@ int main()
     std::cout << std::endl << "CLASSE TESTE:" << std::endl;
     TestAdd<Test> test3;
     test3.run();
+
 
     std::cout << std::endl << "Lit + Add + Print + Eval:" << std::endl;
     LitE c {10};
@@ -62,6 +61,7 @@ int main()
     TestNeg<Test> test5;
     test5.run();
 
+
     std::cout << std::endl << "Lit + Neg + Print + Eval:" << std::endl;
     NegEval<Neg<ExpEval<Exp>>> menos_c {c};
     menos_c.print();
@@ -70,5 +70,20 @@ int main()
     std::cout << std::endl << "CLASSE TESTE:" << std::endl;
     TestNegEval<TestLitEval<TestNeg<Test>>> test6;
     test6.run();
+
+
+    std::cout << std::endl << "Lit + Add + Neg + Print:" << std::endl;
+    Add<> b_menos_a {b,menos_a};
+    b_menos_a.print();
+
+    std::cout << std::endl << "CLASSE TESTE:" << std::endl;
+    TestNeg<TestAdd<Test>> test7;
+    test7.run();
+
+
+    std::cout << std::endl << "Lit + Add + Neg + Print + Eval:" << std::endl;
+    AddE d_menos_c {d,menos_c};
+    d_menos_c.print();
+    std::cout << " = " << d_menos_c.eval() << std::endl;
     return 0;
 }
