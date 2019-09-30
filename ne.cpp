@@ -9,7 +9,7 @@
 template<typename T>
 class NegEval : public T {
 public:
-    NegEval(ExpEval &expr) : T(expr){}
+    NegEval(ExpEval<Exp> &expr) : T(expr){}
 
 	virtual int eval() const override {
 		return T::expr->eval() * -1;
