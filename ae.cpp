@@ -10,7 +10,7 @@
 template<typename T>
 class AddEval : public T {
 public:
-    AddEval(LitE &left, LitE &right) : T(left, right){}
+    AddEval(ExpEval &left, ExpEval &right) : T(left, right){}
 
     virtual int eval() const override {
 		return T::left->eval() + T::right->eval();
