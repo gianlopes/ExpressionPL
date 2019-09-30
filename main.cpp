@@ -7,11 +7,11 @@ public:
 	virtual int eval() const = 0;
 };
 
-class Literal : public Exp {
+class Lit : public Exp {
 public:
 	int value;
 
-	Literal(int v) : value{v} {};
+	Lit(int v) : value{v} {};
 	
 	virtual void print() const override {
 		std::cout << value;
@@ -57,22 +57,31 @@ public:
 	}
 };
 
+class Test {
+public:
+	Lit ltree;
+	Add atree;
+	Neg ntree;
+	Test() : ltree{3}, atree{ltree, ltree}, ntree{ltree} {} 
+
+	void run() {
+		ltree.print();
+		std::cout << std::endl;
+		atree.print();
+		std::cout << std::endl;
+		ntree.print();
+		std::cout << std::endl;
+		std::cout << ltree.eval() << std::endl;
+		std::cout << atree.eval() << std::endl;
+		std::cout << ntree.eval() << std::endl;
+	}
+};
+
+
 int main()
 {
-	Literal x {11};
-	x.print();
-	std::cout << '\n'<< "Valor de x = " << x.eval() << std::endl;
-	Literal y {5};
-	y.print();
-	std::cout << '\n' << "Valor de y = " << y.eval() << std::endl;
-	
-	Add soma {x,y};
-	soma.print();
-	std::cout << " = " << soma.eval() << std::endl;
-
-	Neg menosx {x};
-	menosx.print();
-	std::cout << '\n' << menosx.eval() << std::endl;
+	Test test {};
+	test.run();
 
 	return 0;
 }
