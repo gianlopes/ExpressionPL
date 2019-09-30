@@ -4,6 +4,7 @@
 #include "ap.cpp"
 #include "ae.cpp"
 #include "np.cpp"
+#include "ne.cpp"
 
 int main()
 {
@@ -61,6 +62,13 @@ int main()
     TestNeg<Test> test5;
     test5.run();
 
-    
+    std::cout << std::endl << "Lit + Neg + Print + Eval:" << std::endl;
+    NegEval<Neg<ExpEval<Exp>>> menos_c {c};
+    menos_c.print();
+    std::cout << " = " << menos_c.eval() << std::endl;
+
+    std::cout << std::endl << "CLASSE TESTE:" << std::endl;
+    TestNegEval<TestLitEval<TestNeg<Test>>> test6;
+    test6.run();
     return 0;
 }
