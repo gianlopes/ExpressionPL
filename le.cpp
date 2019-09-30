@@ -5,7 +5,7 @@
 #include "lp.cpp"
 
 //adiciona a funcionalidade eval a interface exp
-template<typename T>
+template<typename T = Exp>
 class ExpEval : public T {
 public:
     virtual int eval() const = 0;
