@@ -26,7 +26,7 @@ public:
 class Test {
 public:
 	Lit<> ltree;
-	Test() : ltree{10} {} 
+	Test() : ltree{3} {} 
 
 	void run() {
 		ltree.print();
