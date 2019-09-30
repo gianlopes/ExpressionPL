@@ -3,6 +3,7 @@
 #include "le.cpp"
 #include "ap.cpp"
 #include "ae.cpp"
+#include "np.cpp"
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
     t2.print();
 
     std::cout << std::endl << "CLASSE TESTE:" << std::endl;
-    TestLitEval <Test> test2;
+    TestLitEval<Test> test2;
     test2.run();
 
 
@@ -36,7 +37,7 @@ int main()
     soma.print();
 
     std::cout << std::endl << "CLASSE TESTE:" << std::endl;
-    TestAdd <Test> test3;
+    TestAdd<Test> test3;
     test3.run();
 
     std::cout << std::endl << "Lit + Add + Print + Eval:" << std::endl;
@@ -51,5 +52,15 @@ int main()
     TestAddEval <TestLitEval<TestAdd<Test>>> test4;
     test4.run();
 
+
+    std::cout << std::endl << "Lit + Neg + Print:" << std::endl;
+    Neg<> menos_a {a};
+    menos_a.print();
+
+    std::cout << std::endl << "CLASSE TESTE:" << std::endl;
+    TestNeg<Test> test5;
+    test5.run();
+
+    
     return 0;
 }
