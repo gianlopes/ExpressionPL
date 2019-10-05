@@ -1,6 +1,5 @@
 *.exe
 *.o
-*.exe
 CMakeFiles/*
 *.out
 .vscode/*
