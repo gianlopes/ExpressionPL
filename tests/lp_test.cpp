@@ -1,6 +1,6 @@
 #include <iostream>
 #include <gtest/gtest.h>
-#include "lp.cpp"
+#include "../lp.cpp"
 
 class lpTest : public testing::Test {
 protected:
@@ -23,7 +23,10 @@ TEST_F(lpTest, print)
     ASSERT_EQ(output,"5");
 }
 
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST_F(lpTest, print2)
+{
+    testing::internal::CaptureStdout();
+    a.print();
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_NE(output,"");
 }
