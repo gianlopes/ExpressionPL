@@ -1,4 +1,7 @@
-a.exe
+*.exe
 *.o
 *.exe
 CMakeFiles/*
+*.out
+.vscode/*
+test
