@@ -11,8 +11,9 @@ public:
 
     // Overloaded constructors that let this class be combined
     // with others in a flexible order 
-    ExpEval() = default;
-    ExpEval(int v) : T(v) {}
+    // ExpEval() = default;
+    // ExpEval(int v) : T(v) {}
+    // ExpEval(Exp &l, Exp &r) : T(l,r) {}
 
     virtual int eval() const = 0;
 };

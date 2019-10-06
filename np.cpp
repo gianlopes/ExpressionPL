@@ -13,7 +13,7 @@ public:
 
 	virtual void print(std::ostream &stream = std::cout) const override {
 		stream << "-(";
-		expr->print();
+		expr->print(stream);
 		stream << ")";
 	}
 };
