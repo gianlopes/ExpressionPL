@@ -1,4 +1,4 @@
-#include "lp.cpp"
+#include "../lp.cpp"
 #include <iostream>
 
 int main()

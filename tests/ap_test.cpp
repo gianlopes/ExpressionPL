@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../ap.cpp"
+#include "../src/ap.cpp"
 
 // Tests for add print module
 

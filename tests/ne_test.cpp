@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../ne.cpp"
+#include "../src/ne.cpp"
 
 // Tests for neg eval module
 

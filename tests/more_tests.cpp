@@ -1,12 +1,12 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../lp.cpp"
-#include "../le.cpp"
-#include "../ap.cpp"
-#include "../ae.cpp"
-#include "../np.cpp"
-#include "../ne.cpp"
+#include "../src/lp.cpp"
+#include "../src/le.cpp"
+#include "../src/ap.cpp"
+#include "../src/ae.cpp"
+#include "../src/np.cpp"
+#include "../src/ne.cpp"
 
 // Tests compositions with different modules
 
