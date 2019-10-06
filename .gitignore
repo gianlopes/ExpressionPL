@@ -1,3 +1,7 @@
-a.exe
-*.o
 *.exe
+*.o
+CMakeFiles/*
+*.out
+.vscode/*
+test
+expPL

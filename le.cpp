@@ -8,6 +8,7 @@
 template<typename T = Exp>
 class ExpEval : public T {
 public:
+
     virtual int eval() const = 0;
 };
 
@@ -37,11 +38,5 @@ public:
         std::cout << ltree.eval() << std::endl;
     }
 };
-
-// template<typename T, typename Y>
-// class Adapter : public ExpEval<T>, public LitEval
-// {
-
-// };
 
 #endif

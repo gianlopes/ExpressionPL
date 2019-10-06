@@ -6,7 +6,7 @@
 //Interface Exp
 class Exp {
 public:
-	virtual void print() const = 0;
+	virtual void print(std::ostream &stream = std::cout) const = 0;
 };
 
 //Tipo de dados lit apenas com a funcionalidade print()
@@ -17,16 +17,16 @@ public:
 
 	Lit(int v) : value{v} {};
 	
-	virtual void print() const override {
-		std::cout << value;
+	virtual void print(std::ostream &stream = std::cout) const override {
+		stream << value;
 	}
 };
 
 //classe de teste
-class Test {
+class TestLit {
 public:
 	Lit<> ltree;
-	Test() : ltree{3} {} 
+	TestLit() : ltree{3} {} 
 
 	void run() {
 		ltree.print();
