@@ -8,6 +8,12 @@
 template<typename T = Exp>
 class ExpEval : public T {
 public:
+
+    // Overloaded constructors that let this class be combined
+    // with others in a flexible order 
+    ExpEval() = default;
+    ExpEval(int v) : T(v) {}
+
     virtual int eval() const = 0;
 };
 
