@@ -11,10 +11,10 @@ public:
 	
 	Neg(T &e) : expr {&e} {}
 
-	virtual void print() const override {
-		std::cout << "-(";
+	virtual void print(std::ostream &stream = std::cout) const override {
+		stream << "-(";
 		expr->print();
-		std::cout << ")";
+		stream << ")";
 	}
 };
 

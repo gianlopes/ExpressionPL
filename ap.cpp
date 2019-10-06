@@ -11,9 +11,9 @@ public:
 	const T *right;
 	Add(T &l, T &r) : left{&l}, right{&r} {}
 
-    virtual void print() const override {
+    virtual void print(std::ostream &stream = std::cout) const override {
 		left->print();
-		std::cout << '+';
+		stream << '+';
 		right->print();
 	}
 
