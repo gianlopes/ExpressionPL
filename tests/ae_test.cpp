@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../ae.cpp"
+#include "../src/ae.cpp"
 
 // Tests for add eval module
 

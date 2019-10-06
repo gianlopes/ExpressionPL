@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../lp.cpp"
+#include "../src/lp.cpp"
 
 // Tests for lit print module
 

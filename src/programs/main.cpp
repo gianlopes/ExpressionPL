@@ -1,10 +1,10 @@
 #include <iostream>
-#include "lp.cpp"
-#include "le.cpp"
-#include "ap.cpp"
-#include "ae.cpp"
-#include "np.cpp"
-#include "ne.cpp"
+#include "../lp.cpp"
+#include "../le.cpp"
+#include "../ap.cpp"
+#include "../ae.cpp"
+#include "../np.cpp"
+#include "../ne.cpp"
 
 int main()
 {
