@@ -9,12 +9,6 @@ template<typename T = Exp>
 class ExpEval : public T {
 public:
 
-    // Overloaded constructors that let this class be combined
-    // with others in a flexible order 
-    // ExpEval() = default;
-    // ExpEval(int v) : T(v) {}
-    // ExpEval(Exp &l, Exp &r) : T(l,r) {}
-
     virtual int eval() const = 0;
 };
 
@@ -44,11 +38,5 @@ public:
         std::cout << ltree.eval() << std::endl;
     }
 };
-
-// template<typename T, typename Y>
-// class Adapter : public ExpEval<T>, public LitEval
-// {
-
-// };
 
 #endif
