@@ -11,7 +11,7 @@ This code has been tested with the following specifications:
 
 ### Files
 The project is divided in two folders. ***src*** contains the implementation of the six modules proposed in the article that can be used to compose different programs as listed. Examples of this programs can be found in the folder src/programs.
-Folder ***tests*** contains unit tests using [Google Test framework](https://github.com/google/googletest) (needs separate installation), which test functionalities from all src modules (alone an combined).
+Folder ***tests*** contains unit tests using [Google Test framework](https://github.com/google/googletest) (needs separate installation), which test functionalities from all src modules (alone and combined).
 To run then use:
 ```sh
 $ cd ExpressionPL/tests
