@@ -1,5 +1,9 @@
 /* Google test library needs to be installed in your operational system
    https://github.com/google/googletest/
+   
+   To run all tests:
+   make
+   ./test
 */
 #include <gtest/gtest.h>
 // Includes all test modules
