@@ -1,6 +1,9 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
+#include "../src/lp.cpp"
+#include "../src/le.cpp"
+#include "../src/np.cpp"
 #include "../src/ne.cpp"
 
 // Tests for neg eval module

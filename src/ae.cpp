@@ -4,9 +4,6 @@
 // Module Add - eval
 
 #include <iostream>
-// #include "lp.cpp"
-// #include "le.cpp"
-// #include "ap.cpp"
 
 // Implements eval method in Add class
 template<typename T>

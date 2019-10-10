@@ -1,6 +1,9 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
+#include "../src/lp.cpp"
+#include "../src/le.cpp"
+#include "../src/ap.cpp"
 #include "../src/ae.cpp"
 
 // Tests for add eval module

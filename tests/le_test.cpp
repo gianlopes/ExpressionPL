@@ -1,6 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
+#include "../src/lp.cpp"
 #include "../src/le.cpp"
 
 // Tests for lit eval module

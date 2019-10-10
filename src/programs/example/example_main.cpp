@@ -7,7 +7,7 @@ further modifications.
 
 To run from ExpressionPL directory do:
     make
-    ./src/programs/example
+    ./src/programs/example/example_main
 */
 
 #include "lit.cpp"

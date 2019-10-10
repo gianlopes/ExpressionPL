@@ -1,5 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
+
+#include "../src/lp.cpp"
 #include "../src/np.cpp"
 
 // Tests for add print module

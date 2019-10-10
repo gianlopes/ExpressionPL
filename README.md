@@ -1,12 +1,12 @@
-###### Names
-Ricardo de Castro Giometti Santos
+###### Universidade de Brasília
 
+Ricardo de Castro Giometti Santos - 180027263
 Gianlucas Dos Santos Lopes - 180041991
 
 # ExpressionPL
 This project follows the article ["Evaluating Support for Features in Advanced Modularization Technologies"](https://www.researchgate.net/publication/221496303_Evaluating_Support_for_Features_in_Advanced_Modularization_Technologies) by Lopez-Herrejon, Roberto & Batory, Don & Cook, William. (2005).
 
-In this code we try to implement the Expression Problem in c++ using template metaprogramming together with [mixins](http://www.thinkbottomup.com.au/site/blog/C%20%20_Mixins_-_Reuse_through_inheritance_is_good).
+In this code we implement the Expression Problem in c++ using template metaprogramming together with mixins.
 
 ### Requirements
 This code has been tested with the following specifications:
@@ -35,7 +35,7 @@ To run the example do:
 $ ./src/programs/example/example_main
 ```
 
-Other programs
+Other programs (listed in the article)
 ```sh
 $ ./src/programs/program1
 $ ./src/programs/program6

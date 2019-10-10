@@ -4,7 +4,6 @@
 // Module Add - print
 
 #include <iostream>
-//#include "lp.cpp"
 
 // Defines the Add class
 // It implements method print from interface Exp

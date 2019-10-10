@@ -4,7 +4,6 @@
 // Module Neg - print
 
 #include <iostream>
-// #include "lp.cpp"
 
 // Defines the Neg class
 // It implements method print from interface Exp

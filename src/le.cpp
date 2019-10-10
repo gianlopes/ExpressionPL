@@ -4,7 +4,6 @@
 // Module Lit - eval
 
 #include <iostream>
-//#include "lp.cpp"
 
 // Adds eval method to an interface
 template<typename T>

@@ -4,9 +4,6 @@
 // Module Neg - eval
 
 #include <iostream>
-// #include "lp.cpp"
-// #include "le.cpp"
-// #include "np.cpp"
 
 // Implements eval method in Neg class
 template<typename T>
