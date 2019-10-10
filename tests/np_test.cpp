@@ -7,10 +7,13 @@
 // Fixture class to be used in tests
 class npTest : public testing::Test {
 protected:
+
     // Declaring literals
     Lit<Exp> a, b;
+
     // Declaring Neg expression
     Neg<Exp> aneg, bneg;
+    
     // String to redirect print() output
     std::stringstream stream;
 

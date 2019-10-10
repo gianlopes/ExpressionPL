@@ -1,35 +1,45 @@
 #ifndef AE_H
 #define AE_H
-//modulo add - eval
-#include <iostream>
-#include "lp.cpp"
-#include "ap.cpp"
-#include "le.cpp"
 
-//adiciona a funcionalidade eval ao Add
+// Module Add - eval
+
+#include <iostream>
+// #include "lp.cpp"
+// #include "le.cpp"
+// #include "ap.cpp"
+
+// Implements eval method in Add class
 template<typename T>
 class AddEval : public T {
 public:
+    
+    // Constructor
     AddEval(ExpEval<Exp> &left, ExpEval<Exp> &right) : T(left, right){}
 
+    // Eval implementation
     virtual int eval() const override {
 		return T::left->eval() + T::right->eval();
 	}
+
 };
 
-// Dei um nome para o add com funcionalidade de eval()
-typedef AddEval<Add<ExpEval<Exp>>> AddE;
-
-//adiciona o teste da funcionalidade eval
+// Appends new functionality to Test class
 template<typename T>
 class TestAddEval : public T {
 public:
-    AddE atree;
+
+    // Declares new version of atree with eval functionality
+    AddEval<Add<ExpEval<Exp>>> atree;
+
+    // Constructor
     TestAddEval() : atree{T::ltree, T::ltree} {}
 
+    // Appends to run method
     void run() {
         T::run();
         std::cout << atree.eval() << std::endl;
     }
+
 };
+
 #endif

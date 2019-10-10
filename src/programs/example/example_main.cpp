@@ -5,39 +5,44 @@ the print functionality from the Lit definition and still be able
 to use the other modules (le.cpp in this example) without needing
 further modifications.
 
-compile with:
-    g++ -std=c++17 programa1.cpp 
-run with
-    ./a.out
+To run from ExpressionPL directory do:
+    make
+    ./src/programs/example
 */
 
 #include "lit.cpp"
 #include "print.cpp"
-#include "le.cpp"
+#include "../../le.cpp"
 
 int main()
 {
-    // a Lit with no methods
+    // Lit with no methods
     Lit<Exp> a{0};
     
-    // a Lit with print method
+    // Lit with print method
     LitPrint<Lit<ExpPrint<Exp>>> b{10};
+    std::cout << "b.print() = ";
     b.print();
     std::cout<< std::endl;
 
-    // a Lit with print and eval
+    // A Lit with print and eval
     LitEval<LitPrint<Lit<ExpPrint<ExpEval<Exp>>>>> c{15};
+    std::cout << "c.print() = ";
     c.print();
-    std::cout<< std::endl << c.eval() << std::endl;
+    std::cout<< std::endl << "c.eval() = " << c.eval() << std::endl;
 
-    // combined tests
-    TestLitEval<TestLitPrint<TestLit>> t2;
-    t2.run();
+    std::cout << "Test Class1:\n";
 
-    // can be done in different order as long as TestLit is the first
+    // Combined tests
+    TestLitEval<TestLitPrint<TestLit>> t1;
+    t1.run();
+
+    std::cout << "Test Class2:\n";
+
+    // Can be done in different order as long as TestLit is the first
     // as it's the module de introduces the test class.
-    TestLitPrint<TestLitEval<TestLit>> t3;
-    t3.run();
+    TestLitPrint<TestLitEval<TestLit>> t2;
+    t2.run();
 
     return 0;
 }

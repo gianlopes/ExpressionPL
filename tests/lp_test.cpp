@@ -8,13 +8,16 @@
 // Fixture class to be used in tests
 class lpTest : public testing::Test {
 protected:
+
     // Declaring literals
     Lit<Exp> a, b;
+
     // String to redirect print() output
     std::stringstream stream;
 
     // Constructor
     lpTest() : a{5}, b{-5} {}
+    
 };
 
 // Testing positive value assigned in constructor

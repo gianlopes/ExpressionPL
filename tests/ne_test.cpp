@@ -8,12 +8,13 @@
 // Fixture class to be used in tests
 class neTest : public testing::Test {
 protected:
+
     // Literal with added eval method
     LitEval<Lit<ExpEval<Exp>>> a, b, c;
+    
     // Add with added eval method
-    NegEval<Neg<ExpEval<Exp>>> aneg;
-    // NegE is just a more compact way of declaring the above type using typedef
-    NegE bneg, cneg;
+    NegEval<Neg<ExpEval<Exp>>> aneg,bneg,cneg;
+
     // String to redirect print() output
     std::stringstream stream;
 

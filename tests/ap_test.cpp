@@ -8,10 +8,13 @@
 // Fixture class to be used in tests
 class apTest : public testing::Test {
 protected:
+
     // Declaring literals
     Lit<Exp> a, b, c;
+
     // Declaring add expression
     Add<Exp> soma, soma2;
+    
     // String to redirect print() output
     std::stringstream stream;
 

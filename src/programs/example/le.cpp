@@ -3,39 +3,52 @@
 // modulo lit - eval
 #include <iostream>
 
-//adiciona a funcionalidade eval a interface exp
+// This file is nearly equal to src/le.cpp, the only difference
+// is that we removed the include for src/lp.cpp as the Lit class
+// and print method are going to be implemented separately for this example.
+
+// Adds eval method to an interface
 template<typename T = Exp>
 class ExpEval : public T {
 public:
 
+    // Appends abstract method eval
     virtual int eval() const = 0;
+
 };
 
-//adiciona a funcionalidade eval ao lit
+// Implements eval method in Lit class
 template<typename T>
 class LitEval : public T {
 public:
+
+    // Constructor
     LitEval(int v) : T(v) {}
 
+    // Eval implementation
     virtual int eval() const override {
 		return T::value;
 	}
+    
 };
 
-// Dei um nome para o Lit com funcionalidade de eval()
-typedef LitEval<Lit<ExpEval<Exp>>> LitE;
-
-//adiciona o teste da funcionalidade eval
+// Appends new functionality to Test class
 template<typename T>
 class TestLitEval : public T {
 public:
-    LitE ltree;
+
+    // Declares new version of ltree with print functionality
+    LitEval<Lit<ExpEval<Exp>>> ltree;
+
+    // Constructor
     TestLitEval() : ltree{T::ltree.value} {}
 
+    // Appends to run method
     void run() {
         T::run();
         std::cout << ltree.eval() << std::endl;
     }
+
 };
 
 #endif

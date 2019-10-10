@@ -1,9 +1,11 @@
-/* Google test library needs to be installed in your operational system
+/* 
+Google test library needs to be installed in your operational system libraries
    https://github.com/google/googletest/
    
-   To run all tests:
-   make
-   ./test
+To run all tests:
+from ExpressionPL (parent directory) do:
+    make
+   ./tests/test
 */
 #include <gtest/gtest.h>
 // Includes all test modules

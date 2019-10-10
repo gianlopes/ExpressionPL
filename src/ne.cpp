@@ -1,36 +1,45 @@
 #ifndef NE_H
 #define NE_H
-// modulo neg - eval
-#include <iostream>
-#include "lp.cpp"
-#include "le.cpp"
-#include "np.cpp"
 
+// Module Neg - eval
+
+#include <iostream>
+// #include "lp.cpp"
+// #include "le.cpp"
+// #include "np.cpp"
+
+// Implements eval method in Neg class
 template<typename T>
 class NegEval : public T {
 public:
+
+    // Constructor
     NegEval(ExpEval<Exp> &expr) : T(expr){}
 
+    // Eval implementation
 	virtual int eval() const override {
 		return T::expr->eval() * -1;
 	}
+
 };
 
-// Dei um nome para o Neg com funcionalidade de eval()
-typedef NegEval<Neg<ExpEval<Exp>>> NegE;
-
-//adiciona o teste da funcionalidade eval da exp Neg
+// Appends new functionality to Test class
 template<typename T>
 class TestNegEval : public T {
 public:
-    NegE ntree;
 
+    // Declares new version of ntree with eval functionality
+    NegEval<Neg<ExpEval<Exp>>> ntree;
+
+    // Constructor
     TestNegEval() : ntree{T::ltree} {}
 
+    // Appends to run method
     void run() {
         T::run();
         std::cout << ntree.eval() << std::endl;
     }
+    
 };
 
 #endif
