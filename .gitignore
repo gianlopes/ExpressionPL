@@ -5,3 +5,7 @@ CMakeFiles/*
 .vscode/*
 test
 expPL
+tests/test
+src/programs/program6
+src/programs/program1
+src/programs/example/program2

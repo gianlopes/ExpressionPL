@@ -8,10 +8,11 @@
 // Fixture class to be used in tests
 class leTest : public testing::Test {
 protected:
+
     // Literal with added eval method
-    LitEval<Lit<ExpEval<Exp>>> a;
-    // LitE is just a more compact way of declaring the above type using typedef
-    LitE b, c;
+    LitEval<Lit<ExpEval<Exp>>> a,b,c;
+    
+    // String to redirect print() output
     std::stringstream stream;
 
     // Constructor

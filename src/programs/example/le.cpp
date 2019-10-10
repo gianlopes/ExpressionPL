@@ -1,13 +1,14 @@
 #ifndef LE_H
 #define LE_H
-
-// Module Lit - eval
-
+// modulo lit - eval
 #include <iostream>
-//#include "lp.cpp"
+
+// This file is nearly equal to src/le.cpp, the only difference
+// is that we removed the include for src/lp.cpp as the Lit class
+// and print method are going to be implemented separately for this example.
 
 // Adds eval method to an interface
-template<typename T>
+template<typename T = Exp>
 class ExpEval : public T {
 public:
 
@@ -24,11 +25,11 @@ public:
     // Constructor
     LitEval(int v) : T(v) {}
 
-    // Eval implemantation
+    // Eval implementation
     virtual int eval() const override {
 		return T::value;
 	}
-
+    
 };
 
 // Appends new functionality to Test class
@@ -36,9 +37,9 @@ template<typename T>
 class TestLitEval : public T {
 public:
 
-    // Declares new version of ltree with eval functionality
+    // Declares new version of ltree with print functionality
     LitEval<Lit<ExpEval<Exp>>> ltree;
-    
+
     // Constructor
     TestLitEval() : ltree{T::ltree.value} {}
 

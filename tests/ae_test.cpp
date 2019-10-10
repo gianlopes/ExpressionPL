@@ -11,9 +11,7 @@ protected:
     // Literal with added eval method
     LitEval<Lit<ExpEval<Exp>>> a, b, c, d, e;
     // Add with added eval method
-    AddEval<Add<ExpEval<Exp>>> soma;
-    // AddE is just a more compact way of declaring the above type using typedef
-    AddE soma2, somaZero, somaMenos;
+    AddEval<Add<ExpEval<Exp>>> soma, soma2, somaZero, somaMenos;
     // String to redirect print() output
     std::stringstream stream;
 

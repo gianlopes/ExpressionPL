@@ -5,33 +5,43 @@
 
 #include <iostream>
 
-// This module creates interface Exp containing the print method.
+// Creates interface Exp containing the print method.
 class Exp {
 public:
+
+	// Abstract method print
 	virtual void print(std::ostream &stream = std::cout) const = 0;
+
 };
 
-// The Lit class that can implement Exp print method
-// and is used to represent an Int literal.
+// The Lit class represents a Literal and simply stores a value.
+// It implements method print from interface Exp
 template<typename T = Exp> // Default template is Exp
 class Lit : public T {
 public:
+
 	int value;
 
+	// Constructor
 	Lit(int v) : value{v} {};
 	
 	// Print implemantation, defaults output to std::cout
 	virtual void print(std::ostream &stream = std::cout) const override {
 		stream << value;
 	}
+
 };
 
 // Test class - used in the article to test module compositions
 class TestLit {
 public:
-	Lit<> ltree;
+
+	Lit<Exp> ltree;
+
+	// Constructor
 	TestLit() : ltree{3} {} 
 
+	// Declares method to run the test
 	void run() {
 		ltree.print();
 		std::cout << std::endl;

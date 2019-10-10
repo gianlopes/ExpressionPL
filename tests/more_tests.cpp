@@ -14,8 +14,8 @@
 class lp_ap_np : public testing::Test {
 protected:
 
-    Lit<> a, b;
-    Neg<> aneg,bneg;
+    Lit<Exp> a, b;
+    Neg<Exp> aneg,bneg;
 
     // String to redirect print() output
     std::stringstream stream;
@@ -26,7 +26,7 @@ protected:
 
 TEST_F(lp_ap_np, test1)
 {
-    Add<> soma{bneg,a};
+    Add<Exp> soma{bneg,a};
 
     stream.str("");
     soma.print(stream);
@@ -35,9 +35,9 @@ TEST_F(lp_ap_np, test1)
 
 TEST_F(lp_ap_np, test2)
 {
-    Add<> soma1{a,b};
-    Neg<> nsoma1{soma1};
-    Add<> soma2{nsoma1, a};
+    Add<Exp> soma1{a,b};
+    Neg<Exp> nsoma1{soma1};
+    Add<Exp> soma2{nsoma1, a};
 
     stream.str("");
     soma2.print(stream);
