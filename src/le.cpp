@@ -35,8 +35,9 @@ template<typename T>
 class TestLitEval : public T {
 public:
 
-    // Declares new version of ltree with eval functionality
-    LitEval<Lit<ExpEval<Exp>>> ltree;
+    // In object creation, all Interfaces should be inherited before adding the classes: Can't do LitEval<ExpEval<Lit<Exp>>>
+    // Also, class deltas should never be inherited before the class defition : Can't do LitEval<ExpEval> nor Lit<LitEval<ExpEval<Exp>>>
+    LitEval<Lit<ExpEval<Exp>>> ltree; // Declares new version of ltree with eval functionality
     
     // Constructor
     TestLitEval() : ltree{T::ltree.value} {}

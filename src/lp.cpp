@@ -36,6 +36,7 @@ public:
 class TestLit {
 public:
 
+	// In object creation, all Interfaces should be inherited before adding the classes.
 	Lit<Exp> ltree;
 
 	// Constructor

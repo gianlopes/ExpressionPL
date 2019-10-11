@@ -1,8 +1,8 @@
 ###### Universidade de Brasília
 
-Ricardo de Castro Giometti Santos - 180027263
-
 Gianlucas Dos Santos Lopes - 180041991
+
+Ricardo de Castro Giometti Santos - 180027263
 
 # ExpressionPL
 This project follows the article ["Evaluating Support for Features in Advanced Modularization Technologies"](https://www.researchgate.net/publication/221496303_Evaluating_Support_for_Features_in_Advanced_Modularization_Technologies) by Lopez-Herrejon, Roberto & Batory, Don & Cook, William. (2005).
@@ -22,7 +22,7 @@ In the folder src/programs/example, we have an example of how flexible this impl
 
 Folder ***tests*** contains unit tests using [Google Test framework](https://github.com/google/googletest) (needs separate installation), which test functionalities from all src modules (alone and combined).
 
-### Usage
+### Compile and Run
 To compile everything, from the ExpressionPL folder, do:
 ```sh
 $ make
@@ -42,4 +42,19 @@ Other programs (listed in the article)
 ```sh
 $ ./src/programs/program1
 $ ./src/programs/program6
+```
+
+##### Object creation notes
+In object creation, all Interfaces should be inherited before adding the classes and class deltas: Can't do 
+```sh
+LitEval<ExpEval<Lit<Exp>>>
+```
+
+Also, class deltas should never be inherited before the class defition : Can't do 
+```sh
+LitEval<ExpEval>
+```
+or
+```sh
+Lit<LitEval<ExpEval<Exp>>>
 ```
