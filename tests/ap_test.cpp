@@ -20,7 +20,7 @@ protected:
     std::stringstream stream;
 
     // Constructor
-    apTest() : a{5}, b{2}, c{-1}, soma{a,b}, soma2{b,a} {}
+    apTest() : a{5}, b{2}, c{-1}, soma{&a,&b}, soma2{&b,&a} {}
 };
 
 // Testing print method
@@ -46,7 +46,7 @@ TEST_F(apTest, print_with_minus)
     c.print(stream);
     EXPECT_EQ(stream.str(),"-1");
 
-    Add<Exp> soma3 {a,c}, soma4{c,a};
+    Add<Exp> soma3 {&a,&c}, soma4{&c,&a};
     stream.str("");
     soma3.print(stream);
     EXPECT_EQ(stream.str(),"5+-1");

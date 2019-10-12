@@ -11,11 +11,16 @@ class AddEval : public T {
 public:
     
     // Constructor
-    AddEval(ExpEval<Exp> &left, ExpEval<Exp> &right) : T(left, right){}
+    AddEval() = default;
+    AddEval(Exp *left, Exp *right) {
+        this->left = left;
+        this->right = right;
+    }
 
     // Eval implementation
-    virtual int eval() const override {
-		return T::left->eval() + T::right->eval();
+    virtual int eval() override {
+		return dynamic_cast<ExpEval<Exp>*>(T::left)->eval() 
+        + dynamic_cast<ExpEval<Exp>*>(T::right)->eval();
 	}
 
 };
@@ -29,7 +34,7 @@ public:
     AddEval<Add<ExpEval<Exp>>> atree;
 
     // Constructor
-    TestAddEval() : atree{T::ltree, T::ltree} {}
+    TestAddEval() : atree{&(T::ltree), &(T::ltree)} {}
 
     // Appends to run method
     void run() {

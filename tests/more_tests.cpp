@@ -21,12 +21,12 @@ protected:
     std::stringstream stream;
 
     // Constructor
-    lp_ap_np() : a{5}, b{2}, aneg{a}, bneg{b} {}
+    lp_ap_np() : a{5}, b{2}, aneg{&a}, bneg{&b} {}
 };
 
 TEST_F(lp_ap_np, test1)
 {
-    Add<Exp> soma{bneg,a};
+    Add<Exp> soma{&bneg,&a};
 
     stream.str("");
     soma.print(stream);
@@ -35,9 +35,9 @@ TEST_F(lp_ap_np, test1)
 
 TEST_F(lp_ap_np, test2)
 {
-    Add<Exp> soma1{a,b};
-    Neg<Exp> nsoma1{soma1};
-    Add<Exp> soma2{nsoma1, a};
+    Add<Exp> soma1{&a,&b};
+    Neg<Exp> nsoma1{&soma1};
+    Add<Exp> soma2{&nsoma1, &a};
 
     stream.str("");
     soma2.print(stream);
@@ -55,12 +55,12 @@ protected:
     std::stringstream stream;
 
     // Constructor
-    lp_ap_np_le_ae_ne() : a{5}, b{2}, aneg{a}, bneg{b} {}
+    lp_ap_np_le_ae_ne() : a{5}, b{2}, aneg{&a}, bneg{&b} {}
 };
 
 TEST_F(lp_ap_np_le_ae_ne, test1_print)
 {
-    AddEval<Add<ExpEval<Exp>>> soma{bneg,a};
+    AddEval<Add<ExpEval<Exp>>> soma{&bneg,&a};
 
     stream.str("");
     soma.print(stream);
@@ -69,7 +69,7 @@ TEST_F(lp_ap_np_le_ae_ne, test1_print)
 
 TEST_F(lp_ap_np_le_ae_ne, test1_eval)
 {
-    AddEval<Add<ExpEval<Exp>>> soma{bneg,a};
+    AddEval<Add<ExpEval<Exp>>> soma{&bneg,&a};
 
     
     EXPECT_EQ(soma.eval(),3);
@@ -77,9 +77,9 @@ TEST_F(lp_ap_np_le_ae_ne, test1_eval)
 
 TEST_F(lp_ap_np_le_ae_ne, test2_print)
 {
-    AddEval<Add<ExpEval<Exp>>> soma1{a,b};
-    NegEval<Neg<ExpEval<Exp>>> nsoma1{soma1};
-    AddEval<Add<ExpEval<Exp>>> soma2{nsoma1, a};
+    AddEval<Add<ExpEval<Exp>>> soma1{&a,&b};
+    NegEval<Neg<ExpEval<Exp>>> nsoma1{&soma1};
+    AddEval<Add<ExpEval<Exp>>> soma2{&nsoma1, &a};
 
     stream.str("");
     soma2.print(stream);
@@ -88,9 +88,9 @@ TEST_F(lp_ap_np_le_ae_ne, test2_print)
 
 TEST_F(lp_ap_np_le_ae_ne, test2_eval)
 {
-    AddEval<Add<ExpEval<Exp>>> soma1{a,b};
-    NegEval<Neg<ExpEval<Exp>>> nsoma1{soma1};
-    AddEval<Add<ExpEval<Exp>>> soma2{nsoma1, a};
+    AddEval<Add<ExpEval<Exp>>> soma1{&a,&b};
+    NegEval<Neg<ExpEval<Exp>>> nsoma1{&soma1};
+    AddEval<Add<ExpEval<Exp>>> soma2{&nsoma1, &a};
 
     EXPECT_EQ(soma2.eval(),-2);
 }

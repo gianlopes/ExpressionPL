@@ -11,7 +11,7 @@ class ExpEval : public T {
 public:
 
     // Appends abstract method eval
-    virtual int eval() const = 0;
+    virtual int eval() = 0;
 
 };
 
@@ -21,10 +21,13 @@ class LitEval : public T {
 public:
 
     // Constructor
-    LitEval(int v) : T(v) {}
+    LitEval() = default;
+    LitEval(int v) {
+        this->value = v;
+    }
 
     // Eval implemantation
-    virtual int eval() const override {
+    virtual int eval() override {
 		return T::value;
 	}
 

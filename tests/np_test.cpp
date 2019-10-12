@@ -20,7 +20,7 @@ protected:
     std::stringstream stream;
 
     // Constructor
-    npTest() : a{5}, b{-2}, aneg{a}, bneg{b} {}
+    npTest() : a{5}, b{-2}, aneg{&a}, bneg{&b} {}
 };
 
 // Testing print method

@@ -11,11 +11,14 @@ class NegEval : public T {
 public:
 
     // Constructor
-    NegEval(ExpEval<Exp> &expr) : T(expr){}
+    NegEval() = default;
+    NegEval(Exp *expr){
+        this->expr = expr;
+    }
 
     // Eval implementation
-	virtual int eval() const override {
-		return T::expr->eval() * -1;
+	virtual int eval() override {
+		return dynamic_cast<ExpEval<Exp>*>(T::expr)->eval() * -1;
 	}
 
 };
@@ -29,7 +32,7 @@ public:
     NegEval<Neg<ExpEval<Exp>>> ntree;
 
     // Constructor
-    TestNegEval() : ntree{T::ltree} {}
+    TestNegEval() : ntree{&(T::ltree)} {}
 
     // Appends to run method
     void run() {

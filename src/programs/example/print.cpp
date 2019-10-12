@@ -22,7 +22,10 @@ class LitPrint : public T {
 public:
 
 	// Constructor
-	LitPrint(int v) : T(v) {}
+	LitPrint() = default;
+	LitPrint(int v) {
+		this->value = v;
+	}
 
 	// Print implemantation, defaults output to std::cout
 	virtual void print(std::ostream &stream = std::cout) const override {

@@ -20,7 +20,7 @@ protected:
 
     // Constructor
     aeTest() : a{5}, b{2}, c{0}, d{-1}, e{-5}, 
-    soma{a,b}, soma2{b,a}, somaZero{c,c}, somaMenos{d,e} {}
+    soma{&a,&b}, soma2{&b,&a}, somaZero{&c,&c}, somaMenos{&d,&e} {}
 };
 
 // Testing print method for positive value literals

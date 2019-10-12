@@ -12,10 +12,11 @@ class Neg : public T {
 public:
 
 	// Stores an expression
-	T *expr;
+	Exp *expr;
 	
 	// Constructor
-	Neg(T &e) : expr {&e} {}
+	Neg() = default;
+	Neg(Exp *e) : expr{e} {}
 
 	// Print implemantation, defaults output to std::cout
 	virtual void print(std::ostream &stream = std::cout) const override {
@@ -34,7 +35,7 @@ public:
     Neg<Exp> ntree;
 
 	// Constructor
-    TestNeg() : ntree{T::ltree} {}
+    TestNeg() : ntree{&(T::ltree)} {}
 
 	// Appends to method run
     void run(){

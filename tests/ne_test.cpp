@@ -22,7 +22,7 @@ protected:
     std::stringstream stream;
 
     // Constructor
-    neTest() : a{8}, b{-12}, c{0}, aneg{a}, bneg{b}, cneg{c} {}
+    neTest() : a{8}, b{-12}, c{0}, aneg{&a}, bneg{&b}, cneg{&c} {}
 };
 
 // Testing print method for positive value literals

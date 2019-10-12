@@ -23,6 +23,7 @@ public:
 	int value;
 
 	// Constructor
+	Lit() = default;
 	Lit(int v) : value{v} {};
 	
 	// Print implemantation, defaults output to std::cout

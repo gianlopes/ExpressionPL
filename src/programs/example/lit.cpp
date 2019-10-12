@@ -16,6 +16,7 @@ public:
 	int value;
 
 	// Constructor
+	Lit() = default;
 	Lit(int v) : value{v} {};
 
 };

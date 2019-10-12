@@ -12,11 +12,12 @@ class Add : public T {
 public:
 
 	// Stores left and right expression references
-	const T *left;
-	const T *right;
+	Exp *left;
+	Exp *right;
 
 	// Constructor
-	Add(T &l, T &r) : left{&l}, right{&r} {}
+	Add() = default;
+	Add(Exp *l, Exp *r) : left{l}, right{r} {}
 
 	// Print implemantation, defaults output to std::cout
     virtual void print(std::ostream &stream = std::cout) const override {
@@ -35,7 +36,7 @@ public:
     Add<Exp> atree;
 
 	// Constructor
-    TestAdd() : atree{T::ltree, T::ltree} {}
+    TestAdd() : atree{&(T::ltree), &(T::ltree)} {}
 
 	// Appends to method run
     void run(){
